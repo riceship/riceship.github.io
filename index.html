@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+  <div class="header">11/2/2016</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">File Complaint</a>
+  <a href="#">OSHA Regulations</a>
+  <a href="#">Break Timer</a>
+</div>
+
+<div id="main"><span class="plus" style="position: absolute; top: 0; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+<div class="left-questions">
+<div class="question">
+  <div class="arrow_box" style="height: 165px; width: 100%;"><form class="two-opt">
+
+    <div class="cc-selector">
+        <input checked="checked" id="happy" type="radio" name="credit-card" value="happy" />
+        <label class="drinkcard-cc happy" for="happy"></label>
+        <input id="sad" type="radio" name="credit-card" value="sad" />
+        <label class="drinkcard-cc sad" style="margin-left: 50px;"for="sad"></label>
+    </div>
+    </form></div>
+  </div>
+<br>
+<div class="question">
+  <div class="arrow_box" style="height: 165px; width: 100%;"><form class="two-opt">
+
+    <div class="cc-selector">
+        <input checked="checked" id="check" type="radio" name="credit-card" value="check" />
+        <label class="drinkcard-cc check" for="check"></label>
+        <input id="minus" type="radio" name="credit-card" value="minus" />
+        <label class="drinkcard-cc minus"  style="margin-left: 50px;"for="minus"></label>
+    </div>
+    </form></div>
+  </div>
+<br>
+        <div class="question">
+          <div class="arrow_box" style="height: 165px; width: 100%;"><form class="three-opt">
+
+            <div class="cc-selector">
+                <input checked="checked" id="one" type="radio" name="credit-card" value="one" />
+                <label class="drinkcard-cc one" for="one"></label>
+                <input id="two" type="radio" name="credit-card" value="two" />
+                <label class="drinkcard-cc two"for="two"></label>
+                <input id="three" type="radio" name="credit-card" value="three" />
+                <label class="drinkcard-cc three"for="three"></label>
+            </div>
+            </form></div>
+          </div>
+        </div>
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    transition: background-color .5s;
+    background-color: rgba(23,51,62,0.4);
+}
+.left-questions{
+  width: 40%;
+  position: relative;
+  top: 40;
+  left: 70;
+}
+.header{
+  height:15%;
+  width: 40%;
+  position: relative;
+  top: 0%;
+  margin-left: 30%;
+  background-color: white;
+  color: black;
+  font-size: 80px;
+  text-align: center;
+  border-radius: 25px;
+  border: 7px solid black;
+}
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.two-opt{
+  position: absolute;
+  padding: 10px;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+.three-opt{
+  position: absolute;
+  padding: 3px;
+  margin-top: 7%;
+  margin-left: 6%;
+  margin-right: 20%;
+}
+.arrow_box {
+	position: relative;
+  margin-left: 10%;
+	background: #ffffff;
+	border: 4px solid #000000;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #ffffff;
+	border-width: 40px;
+	margin-top: -40px;
+}
+.arrow_box:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-right-color: #000000;
+	border-width: 46px;
+	margin-top: -46px;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.happy{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/flame.png");
+  }
+.sad{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/happy.png");
+}
+.check{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/checked.png");
+  }
+.minus{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/minus.png");
+}
+
+
+.one{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/1.png");
+  }
+.two{
+  background-image:url("/Users/aidaelkouri/Desktop/HACK/2.png");
+}
+.three{
+  background-image: url("/Users/aidaelkouri/Desktop/HACK/3.png")
+}
+}
+.cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:110px;height:200px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+</style>
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("main").style.opacity=0;
+      document.body.style.backgroundColor = "white";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "rgba(23,51,62,0.4)";
+    document.getElementById("main").style.opacity=1;}
+</script>
+
+</body>
+</html>
