@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+  <div class="header">11/2/2016</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">File Complaint</a>
+  <a href="#">OSHA Regulations</a>
+  <a href="#">Break Timer</a>
+</div>
+
+<div id="main"><span class="plus" style="position: absolute; top: 0; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+
+<div class="timerimg" style="margin-left: 10%; margin-top: 0%; width: 40%; float: left;">
+  <input type="image" class="press" src="/Users/aidaelkouri/Desktop/HACK/stopwatch.png" onclick="startTimer()"/></div>
+  <div id="timer">
+    <div id="countdown">5:00</div>
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    transition: background-color .5s;
+    background-color: rgba(23,51,62,0.4);
+}
+
+.press{
+    outline-width: 0;
+}
+
+.press:focus{
+    outline: none;
+}
+#timer{
+  background-color: red;
+  width: 80%;
+  position: relative;
+  margin-left: 40%;
+  margin-top: 15%;
+  font-size: 63px;
+  z-index: -99;
+}
+#countdown{
+  margin-left: 25%;
+}
+.header{
+  height:15%;
+  width: 40%;
+  position: relative;
+  top: 0%;
+  margin-left: 30%;
+  background-color: white;
+  color: black;
+  font-size: 80px;
+  text-align: center;
+  border-radius: 25px;
+  border: 7px solid black;
+}
+
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+</style>
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("main").style.opacity=0;
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "rgba(23,51,62,0.4)";
+    document.getElementById("main").style.opacity=1;}
+    function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+function countdown( elementName, minutes, seconds )
+{
+    var element, endTime, hours, mins, msLeft, time;
+
+    function twoDigits( n )
+    {
+        return (n <= 9 ? "0" + n : n);
+    }
+
+    function updateTimer()
+    {
+        msLeft = endTime - (+new Date);
+        if ( msLeft < 1000 ) {
+            element.innerHTML="Break's over!";
+            document.getElementById("timer").style.backgroundColor = "#98FB98";
+        } else {
+            time = new Date( msLeft );
+            hours = time.getUTCHours();
+            mins = time.getUTCMinutes();
+            element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+        }
+    }
+
+    element = document.getElementById( elementName );
+    endTime = (+new Date) + 1000 * (60*minutes + seconds) + 500;
+    updateTimer();
+
+}
+function startTimer()
+{
+
+  countdown( "countdown", 5, 59 );
+}
+
+</script>
+
+</body>
+</html>
